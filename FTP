@@ -1,0 +1,13 @@
+#!/bin/bash
+HOST='your.ftp.site'
+USER='remoteusername'
+PASSWD='remotepasswd'
+
+ftp -n -v $HOST << EOT
+ascii
+user $USER $PASSWD
+prompt
+cd /srv/daemon-data/352f2333-0d40-4740-81c8-50068ff57a5e
+./update.sh
+bye
+EOT
